@@ -13,6 +13,9 @@ class TestParseServices(unittest.TestCase):
     def test_parse_ntp_returns_udp_and_tcp_123(self):
         self.assertEqual("[{'udp': '123'}, {'tcp': '123'}]", str(get_port_and_protocol("ntp")))
 
+    def test_parse_non_string_raises_exception(self):
+        self.assertRaises(Exception, get_port_and_protocol, 1)
+
 
 if __name__ == '__main__':
     unittest.main()

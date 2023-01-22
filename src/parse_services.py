@@ -35,7 +35,7 @@ def get_port_and_protocol(needle: str)->list:
     results = []
 
     if not isinstance(needle, str):
-        raise Exception(f"parse_services() excpects a string. Value {needle} of type {type(needle)} supplied")
+        raise Exception(f"parse_services() expects a string. Value {needle} of type {type(needle)} supplied")
 
     # Use context manager to guarantee that the file will be closed properly even if an Exception is raised
     with open(SERVICES_FILENAME) as f:
