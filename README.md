@@ -2,7 +2,7 @@
 Searches /etc/services for services that *matches exactly* the supplied string.
 Returns a json list containing dicts. 
 
-Each dict is a key of IP port type and port
+Each dict is a key of IP protocol and port
 
 Example usage:
 

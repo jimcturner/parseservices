@@ -3,7 +3,7 @@ import sys
 helptext = \
 """
 Searches /etc/services for services that *matches exactly* the supplied string.
-Returns a json list containing dicts. Each dict is a key of IP port type and port
+Returns a json list containing dicts. Each dict is a key of IP protocol and port
 
 Example usage:
 
@@ -20,7 +20,7 @@ def get_port_and_protocol(needle: str)->list:
     """
     Searches the /etc/services file for the string needle
 
-    Returns a list containing dicts keyed with the IP type (eg udp or tcp) with the values set to the
+    Returns a list containing dicts keyed with the IP protocol (eg udp or tcp) with the values set to the
     port number registered to that service.
 
     eg for f('ntp') >>>> [{'udp': '123'}, {'tcp': '123'}]
