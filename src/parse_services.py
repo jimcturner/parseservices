@@ -10,6 +10,8 @@ Example usage:
 python parse_services.py ntp
 
 Will search through all services for the those with the name ntp and return [{'udp': '123'}, {'tcp': '123'}]
+
+Returns exit code 1 on error along with the Exception text, otherwise exit code 0
 """
 
 def get_port_and_protocol(needle: str)->list:
@@ -21,7 +23,7 @@ def get_port_and_protocol(needle: str)->list:
 
     eg for f('ntp') >>>> [{'udp': '123'}, {'tcp': '123'}]
     :param needle:
-    :return:
+    :return: A list containing nested dicts.
     """
     SERVICES_FILENAME = '/etc/services'
 
