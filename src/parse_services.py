@@ -9,9 +9,11 @@ Example usage:
 
 python parse_services.py ntp
 
-Will search through all services for the those with the name ntp and return [{'udp': '123'}, {'tcp': '123'}]
+Will search through all services for the those with the name ntp and return [{'udp': '123'}, {'tcp': '123'}].
 
-Returns exit code 1 on error along with the Exception text, otherwise exit code 0
+Will return an empty list if no matching services are found.
+
+Ends exit code 1 on error along with the Exception text, otherwise exit code 0
 """
 
 def get_port_and_protocol(needle: str)->list:
@@ -35,7 +37,7 @@ def get_port_and_protocol(needle: str)->list:
     if not isinstance(needle, str):
         raise Exception(f"parse_services() excpects a string. Value {needle} of type {type(needle)} supplied")
 
-    # Use context manager to guarantee that the file will be closed properlym even if an Exception is raised
+    # Use context manager to guarantee that the file will be closed properly even if an Exception is raised
     with open(SERVICES_FILENAME) as f:
         # Infinite loop to implement a do-while
         while True:

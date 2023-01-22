@@ -1,4 +1,4 @@
-# parseservices
+# parse_services
 Searches /etc/services for services that *matches exactly* the supplied string.
 Returns a json list containing dicts. 
 
@@ -10,4 +10,6 @@ Example usage:
 
 [{'udp': '123'}, {'tcp': '123'}]
 
-Returns exit code 1 on error along with the Exception text, otherwise exit code 0
+Will return an empty list if no matching services are found.
+
+Ends with exit code 1 on error along with the Exception text, otherwise exit code 0
