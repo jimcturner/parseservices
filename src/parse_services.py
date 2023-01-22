@@ -7,7 +7,7 @@ Returns a json list containing dicts. Each dict is a key of IP port type and por
 
 Example usage:
 
-python parseservices.py ntp
+python parse_services.py ntp
 
 Will search through all services for the those with the name ntp and return [{'udp': '123'}, {'tcp': '123'}]
 """
